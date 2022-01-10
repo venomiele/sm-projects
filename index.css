@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rebeccapurple;
+    height: 100vh;
+}
+
+.navbar {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.3rem;
+    border-radius: 2px;
+    border: none;
+    background-color: black;
+    color: white;
+    transition: all 0.3s linear;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 900;
+    transform: translateX(100%);
+    transition: all 0.4s linear;
+}
+
+.active {
+    transform:translateX(0);
+}
+
+.active-btn {
+    transform: translateX(-90px);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 1rem;
+}
