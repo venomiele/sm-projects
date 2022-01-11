@@ -3,6 +3,7 @@ let btn = document.querySelector(".btn");
 let toast = document.querySelector(".toast-btn");
 let toastCon = document.querySelector(".toast-container");
 let texted = document.querySelector(".title");
+let soundsContainer = document.querySelector(".audio-container");
 
 btn.addEventListener("click", () => {
     navbar.classList.toggle("active");
@@ -35,7 +36,7 @@ function writeText() {
     index++;
 
     if(index > text.length) {
-        index = 0;
+        index = 1;
     }
 }
 
@@ -59,3 +60,27 @@ function createHeart() {
 }
 
 let obj = setInterval(createHeart, 200);
+
+// Sound Board
+
+let sounds = ["Feel Good","Locked Away","Clarity","Trap Queen"];
+
+
+sounds.forEach((sound) => {
+let btns = document.createElement("button");
+btns.classList.add("sounds");
+soundsContainer.appendChild(btns);
+btns.innerText = sound;
+
+btns.addEventListener("click", () => {
+    stopSongs();
+    document.getElementById(sound).play();
+})
+
+});
+
+function stopSongs() {
+    sounds.forEach((sound) => {
+        document.getElementById(sound).pause();
+    });
+}
