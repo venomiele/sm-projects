@@ -39,4 +39,23 @@ function writeText() {
     }
 }
 
-setInterval(writeText, 200);
+setInterval(writeText, 200)
+
+let count = 0;
+//Purple rain
+function createHeart() {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.animationDuration = Math.random() * 100 + 2 + "s";
+    heart.innerHTML =`<i class="bi bi-heart-fill"></i>`;
+    document.body.appendChild(heart);
+    count++;
+
+    if(count == 25) {
+        clearInterval(obj);
+}
+
+}
+
+let obj = setInterval(createHeart, 200);
